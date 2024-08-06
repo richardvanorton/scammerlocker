@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "dns-query": "^0.11.2",
     "lucide-react": "^0.424.0",
+    "mailgun.js": "^10.2.3",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
