@@ -1,4 +1,4 @@
-
+"use client"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -7,11 +7,14 @@ import { Button } from "@/components/ui/button"
 import {reportWebsite} from "@/app/actions";
 import { JSX, SVGProps } from "react"
 import Link from "next/link";
+import { useToast } from "@/components/ui/use-toast"
+
 
 export function ReportForm() {
+  const { toast } = useToast()
   return (
       <div className="flex flex-col items-center justify-center w-full h-screen bg-background">
-        <form action={reportWebsite}>
+        <form action={reportWebsite} >
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center justify-between dark:text-card-foreground">Scammerlocker v1
@@ -34,7 +37,15 @@ export function ReportForm() {
               </div>
             </CardContent>
             <CardFooter className="flex justify-end">
-              <Button type="submit">Takedown!</Button>
+              <Button
+                  variant="outline"
+                  onClick={() => {
+                    toast({
+                      title: "Domain take down is processing!",
+                      description: "Your request was sent to the domain registrar. Estimated time for suspension is 2 weeks.",
+                    })
+                  }}
+                  type="submit">Takedown!</Button>
             </CardFooter>
           </Card>
         </form>
