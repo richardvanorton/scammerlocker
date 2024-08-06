@@ -2,9 +2,7 @@ This is an opensource tool to take down fraudulent domains easily. It automates 
 
 ![image](https://github.com/user-attachments/assets/5d286592-b9c5-41a6-8651-72166bed782d)
 
-## Getting Started
-
-First, run the development server:
+## Instructions
 
 ```bash
 npm run dev
