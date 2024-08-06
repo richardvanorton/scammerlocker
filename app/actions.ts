@@ -2,9 +2,6 @@
 
 
 export async function reportWebsite(formData: FormData) {
-    const rawFormData = {
-        siteUrl: formData.get('url'),
-    };
     let siteUrl = formData.get('url');
     // @ts-ignore
     siteUrl = siteUrl.replace(/^https?:\/\//, '')
