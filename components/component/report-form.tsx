@@ -28,7 +28,7 @@ export function ReportForm() {
                 <Input id="url" name="url" type="url" placeholder="Enter the URL of the website" required/>
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="explanation">Explain what kind of scam it is</Label>
+                <Label htmlFor="explanation">Explain what kind of scam they are involved in</Label>
                 <Textarea id="explanation" name="explanation" placeholder="Provide details about the scam or crime"
                           required/>
               </div>
