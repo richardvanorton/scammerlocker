@@ -1,6 +1,7 @@
 This is an opensource tool to (legally) take down scam domains. It automates the boring abuse report process for you.
 
-![image](https://github.com/user-attachments/assets/5d286592-b9c5-41a6-8651-72166bed782d)
+![image](https://github.com/user-attachments/assets/679ef9bc-0f36-4ab5-b941-fd8050bef6ed)
+
 
 ## Instructions
 
