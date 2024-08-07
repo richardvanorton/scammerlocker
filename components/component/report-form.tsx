@@ -39,9 +39,16 @@ export function ReportForm() {
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center justify-between dark:text-card-foreground">Scammerlocker v1
-                <Link href="https://github.com/richardvanorton/scammerlocker" className="hover:text-primary transition-colors" prefetch={false}>
-                <GithubIcon className="h-6 w-6" />
-              </Link></CardTitle>
+                <div className="flex items-center space-x-2">
+                  <Link href="https://x.com/richardvanorton" className="hover:text-primary transition-colors" prefetch={false}>
+                    <TwitterIcon className="h-6 w-6"/>
+                  </Link>
+                  <Link href="https://github.com/richardvanorton/scammerlocker"
+                        className="hover:text-primary transition-colors" prefetch={false}>
+                    <GithubIcon className="h-6 w-6"/>
+                  </Link>
+                </div>
+              </CardTitle>
               <CardDescription>
                 Submit to take down a website that is engaging in fraudulent or illegal activities.
               </CardDescription>
@@ -103,3 +110,23 @@ function GithubIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
       </svg>
   )
 }
+
+function TwitterIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+  return (
+      <svg
+          {...props}
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+      >
+        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+      </svg>
+  )
+}
+

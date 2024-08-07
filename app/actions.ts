@@ -36,7 +36,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
 
     if (success) {
         const { text } = await generateText({
-            model: groq("mixtral-8x7b-32768"),
+            model: groq("llama3-8b-8192"),
             system:
                 `You are an experienced independent scam investigator. ` +
                 `Your name is ${fullName}. Do not forget to include it.` +
@@ -46,7 +46,8 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
                 `Prepare an abuse report on ${siteUrl} using the following context ${explanation} and if applicable, add your analysis about the domain name and TLD choice with ${siteUrl}. ` +
                 `Respond in json format only with an abuse report in the following email format strictly (recipient, subject and body(html format). Domain / hosting provider's email is ${abuseReportEmail}. ` +
                 `Don't mention that you are an independent scam investigator in the email.` +
-                `I should be able to access the keys easily, like text["body"]. The json format needs to be valid so that I can json.parse it. Ensure validity, especially for the body part`,
+                `I should be able to access the keys easily, like text["body"]. The json format needs to be valid so that I can json.parse it. Ensure validity, especially for the body part` +
+                `Do not add any other text, only the JSON`,
         })
         var jsonText = JSON.parse(text);
         console.log(jsonText);
