@@ -8,13 +8,28 @@ import {reportWebsite} from "@/app/actions";
 import { JSX, SVGProps } from "react"
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast"
+import React, { useRef, useState } from 'react';
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+
 
 
 export function ReportForm() {
   const { toast } = useToast()
+  const ref = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef<HCaptcha | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
+  const onCaptchaChange = (token: string) => setCaptchaToken(token);
+  const onCaptchaExpire = () => setCaptchaToken(null);
+
+  // Form submission logic here...
+  const handleFormSubmit = () => {
+    // You'll use the captcha token in this part
+  };
+
   return (
       <div className="flex flex-col items-center justify-center w-full h-screen bg-background">
-        <form action={reportWebsite} >
+        <form ref={ref} onSubmit={handleFormSubmit}>
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center justify-between dark:text-card-foreground">Scammerlocker v1
@@ -35,8 +50,17 @@ export function ReportForm() {
                 <Textarea id="explanation" name="explanation" placeholder="Provide details about the scam or crime"
                           required/>
               </div>
+              <HCaptcha
+                  sitekey="3b74e6cc-ecd8-45b8-b954-016cfacee3f0"
+                  onVerify={onCaptchaChange}
+                  ref={captchaRef}
+                  onExpire={onCaptchaExpire}
+                  theme="dark"
+              />
             </CardContent>
+
             <CardFooter className="flex justify-end">
+
               <Button
                   variant="outline"
                   onClick={() => {

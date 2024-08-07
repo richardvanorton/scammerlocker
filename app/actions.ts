@@ -38,10 +38,12 @@ export async function reportWebsite(formData: FormData) {
         prompt:
             `Prepare an abuse report on ${siteUrl} using the following context ${explanation} and if applicable, add your analysis about the domain name and TLD choice with ${siteUrl}. ` +
             `Respond in json format only with an abuse report in the following email format strictly (recipient, subject and body(html format). Domain / hosting provider's email is ${abuseReportEmail}. ` +
-            `Don't mention that you are an independent scam investigator in the email.`
+            `Don't mention that you are an independent scam investigator in the email.` +
+            `I should be able to access the keys easily, like text["body"]. The json format needs to be valid so that I can json.parse it`
     })
 
     let jsontext = JSON.parse(text);
+    // @ts-ignore
     console.log(jsontext);
 
     const mailgun = new Mailgun(FormData);
@@ -49,15 +51,6 @@ export async function reportWebsite(formData: FormData) {
     const mg = mailgun.client({
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
-        proxy: {
-            protocol: 'http', // 'http' ,
-            host: process.env.PROXY_HOST || '', // use your proxy host here
-            port: 5947, // use your proxy port here
-            auth: { // may be omitted if proxy doesn't require authentication
-                username: process.env.PROXY_USER || '', // provide username
-                password: process.env.PROXY_PASS || '' // provide password
-            }
-        },
     });
 
     mg.messages.create('mg.jumpgatedata.com', {
