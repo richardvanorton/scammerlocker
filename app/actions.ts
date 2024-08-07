@@ -51,6 +51,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         })
         var jsonText = JSON.parse(text);
         console.log(jsonText);
+        console.log(siteUrl, explanation)
     } else {
         console.log("User didn't solve captcha");
 
