@@ -36,7 +36,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
 
     if (success) {
         const { text } = await generateText({
-            model: groq("llama3-8b-8192"),
+            model: groq("llama3-70b-8192"),
             system:
                 `You are an experienced independent scam investigator. ` +
                 `Your name is ${fullName}. Do not forget to include it.` +
