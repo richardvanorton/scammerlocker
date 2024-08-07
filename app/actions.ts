@@ -46,6 +46,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
                 `Prepare an abuse report on ${siteUrl} using the following context ${explanation} and if applicable, add your analysis about the domain name and TLD choice with ${siteUrl}. ` +
                 `Respond in json format only with an abuse report in the following email format strictly (recipient, subject and body(html format). Domain / hosting provider's email is ${abuseReportEmail}. ` +
                 `Don't mention that you are an independent scam investigator in the email.` +
+                `If the ${explanation} seems to be personal or first person, convert to third person` +
                 `I should be able to access the keys easily, like text["body"]. The json format needs to be valid so that I can json.parse it. Ensure validity, especially for the body part` +
                 `Do not add any other text, only the JSON`,
         })
