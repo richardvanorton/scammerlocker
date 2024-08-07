@@ -72,7 +72,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         // @ts-ignore
         mg.messages.create(process.env.FROM_DOMAIN, {
             from: process.env.FROM_SENDER,
-            to: process.env.TEST_REPORT_EMAIL,
+            to: abuseReportEmail,
             subject: jsonText["subject"],
             html: jsonText["body"]
         })
