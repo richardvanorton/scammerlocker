@@ -22,6 +22,7 @@ export function ReportForm() {
   const onCaptchaChange = (token: string) => setCaptchaToken(token);
   const onCaptchaExpire = () => setCaptchaToken(null);
 
+
   // @ts-ignore
   const reportWebsiteWithToken = reportWebsite.bind(null, captchaToken)
 
@@ -29,7 +30,11 @@ export function ReportForm() {
 
   return (
       <div className="flex flex-col items-center justify-center w-full h-screen bg-background">
-        <form ref={ref} action={reportWebsiteWithToken}>
+        <form ref={ref} action={async (formData) => {
+          await reportWebsiteWithToken(formData)
+          ref.current?.reset()
+          captchaRef.current?.resetCaptcha()
+        }}>
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center justify-between dark:text-card-foreground">Scammerlocker v1
@@ -56,6 +61,7 @@ export function ReportForm() {
                   ref={captchaRef}
                   onExpire={onCaptchaExpire}
                   theme="dark"
+
               />
             </CardContent>
 
