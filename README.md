@@ -4,7 +4,7 @@ This is an opensource tool to (legally) take down scam domains. It automates the
 Website: https://scammerlocker.vercel.app/
 
 
-## Instructions
+## Self-hosting Instructions
 
 Run the following
 ```bash
