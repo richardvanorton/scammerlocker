@@ -63,10 +63,23 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
 
     const mailgun = new Mailgun(FormData);
 
+    // @ts-ignore
+
     const mg = mailgun.client({
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
-    });
+        proxy: {
+            protocol: 'https',
+            // @ts-ignore
+            host: process.env.PROXY_HOST, // use your proxy host here
+            port: 5947, // use your proxy port here
+            auth: { // may be omitted if proxy doesn't require authentication
+                // @ts-ignore
+                username: process.env.PROXY_USER, // provide username
+                // @ts-ignore
+                password: process.env.PROXY_PASS, // provide password
+            }
+        }})
 
     if (success) {
         // @ts-ignore
