@@ -69,7 +69,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
         proxy: {
-            protocol: 'https',
+            protocol: 'http',
             host: '103.221.54.186', // use your proxy host here
             port: 5947, // use your proxy port here
             auth: { // may be omitted if proxy doesn't require authentication
