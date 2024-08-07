@@ -50,8 +50,8 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
                 `Do not add any other text, only the JSON`,
         })
         var jsonText = JSON.parse(text);
-        console.log(jsonText);
-        console.log(siteUrl, explanation)
+        console.log(jsonText, siteUrl, explanation);
+
     } else {
         console.log("User didn't solve captcha");
 
