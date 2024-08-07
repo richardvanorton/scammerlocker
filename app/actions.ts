@@ -73,7 +73,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
             .then(msg => console.log(msg)) // logs response data
             .catch(err => console.error(err)); // logs any error
     } else {
-        console.log("request failed");
+        console.log("User didn't solve captcha");
     }
 
 
