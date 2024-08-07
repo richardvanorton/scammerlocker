@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import {Toaster} from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>{children}
       <Toaster/>
+      <SpeedInsights />
+      <Analytics />
       </body>
     </html>
   );
