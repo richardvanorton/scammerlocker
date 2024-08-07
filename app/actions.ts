@@ -3,13 +3,21 @@
 import { generateText } from "ai"
 import { createOpenAI } from '@ai-sdk/openai';
 import Mailgun from 'mailgun.js';
+import { verify } from 'hcaptcha';
+
+const secretKey = process.env.HCAPTCHA_SECRET;
 
 
 
 
-export async function reportWebsite(formData: FormData) {
+// @ts-ignore
+export async function reportWebsite(captchaToken: any, formData: FormData) {
     let siteUrl = formData.get('url');
     let explanation = formData.get('explanation')
+    let hcaptchaToken = captchaToken
+
+    console.log(hcaptchaToken)
+
 
     // @ts-ignore
     siteUrl = siteUrl.replace(/^https?:\/\//, '')
@@ -52,15 +60,21 @@ export async function reportWebsite(formData: FormData) {
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
     });
+    // @ts-ignore
+    const { success } = await verify(secretKey, hcaptchaToken);
 
-    mg.messages.create('mg.jumpgatedata.com', {
-        from: "Richard Van Orton <richard@mg.jumpgatedata.com>",
-        to: abuseReportEmail,
-        subject: jsontext["subject"],
-        html: jsontext["body"]
-    })
-        .then(msg => console.log(msg)) // logs response data
-        .catch(err => console.error(err)); // logs any error
+    if (success) {
+        mg.messages.create('mg.jumpgatedata.com', {
+            from: "Richard Van Orton <richard@mg.jumpgatedata.com>",
+            to: abuseReportEmail,
+            subject: jsontext["subject"],
+            html: jsontext["body"]
+        })
+            .then(msg => console.log(msg)) // logs response data
+            .catch(err => console.error(err)); // logs any error
+    } else {
+        console.log("request failed");
+    }
 
 
 

@@ -22,14 +22,14 @@ export function ReportForm() {
   const onCaptchaChange = (token: string) => setCaptchaToken(token);
   const onCaptchaExpire = () => setCaptchaToken(null);
 
-  // Form submission logic here...
-  const handleFormSubmit = () => {
-    // You'll use the captcha token in this part
-  };
+  // @ts-ignore
+  const reportWebsiteWithToken = reportWebsite.bind(null, captchaToken)
+
+
 
   return (
       <div className="flex flex-col items-center justify-center w-full h-screen bg-background">
-        <form ref={ref} onSubmit={handleFormSubmit}>
+        <form ref={ref} action={reportWebsiteWithToken}>
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center justify-between dark:text-card-foreground">Scammerlocker v1
