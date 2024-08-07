@@ -69,7 +69,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
         proxy: {
-            protocol: 'http',
+            protocol: 'https',
             host: '103.221.54.186', // use your proxy host here
             port: 5947, // use your proxy port here
             auth: { // may be omitted if proxy doesn't require authentication
@@ -83,7 +83,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         // @ts-ignore
         mg.messages.create(process.env.FROM_DOMAIN, {
             from: process.env.FROM_SENDER,
-            to: abuseReportEmail,
+            to: 'rsb@vanorton.org',
             subject: jsonText["subject"],
             html: jsonText["body"]
         })
