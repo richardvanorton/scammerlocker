@@ -73,8 +73,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
             host: '103.221.54.186', // use your proxy host here
             port: 5947, // use your proxy port here
             auth: { // may be omitted if proxy doesn't require authentication
-                // @ts-ignore
-                username: process.env.PROXY_USER, // provide username
+                username: 'bjncezrg', // provide username
                 // @ts-ignore
                 password: process.env.PROXY_PASS, // provide password
             }
