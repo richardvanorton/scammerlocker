@@ -3,7 +3,7 @@
 import { generateText } from "ai"
 import { createOpenAI } from '@ai-sdk/openai';
 import Mailgun from 'mailgun.js';
-import { verify } from 'hcaptcha';
+import { verify } from 'hcaptcha' ;
 
 const secretKey = process.env.HCAPTCHA_SECRET;
 
@@ -69,22 +69,14 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
     const mg = mailgun.client({
         username: 'api',
         key: process.env.MAILGUN_API_KEY || '',
-        proxy: {
-            protocol: 'http',
-            host: '103.221.54.186', // use your proxy host here
-            port: 5947, // use your proxy port here
-            auth: { // may be omitted if proxy doesn't require authentication
-                username: 'bjncezrg', // provide username
-                // @ts-ignore
-                password: process.env.PROXY_PASS, // provide password
-            }
-        }})
+
+        })
 
     if (success) {
         // @ts-ignore
         mg.messages.create(process.env.FROM_DOMAIN, {
             from: process.env.FROM_SENDER,
-            to: abuseReportEmail,
+            to: "rsb@vanorton.org",
             subject: jsonText["subject"],
             html: jsonText["body"]
         })
