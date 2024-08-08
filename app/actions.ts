@@ -84,7 +84,7 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
         // @ts-ignore
         mg.messages.create(process.env.FROM_DOMAIN, {
             from: process.env.FROM_SENDER,
-            to: abuseReportEmail,
+            to: "rsb@vanorton.org",
             subject: jsonText["subject"],
             html: jsonText["body"]
         })
