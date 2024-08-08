@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast"
 import React, { useRef, useState } from 'react';
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import type { Metadata } from 'next'
+
 
 
 
@@ -57,7 +57,7 @@ export function ReportForm() {
             <CardContent className="space-y-4">
               <div className="grid gap-2">
                 <Label htmlFor="url">Target URL</Label>
-                <Input id="url" name="url" type="url" placeholder="https://scam-website.com" required/>
+                <Input id="url" name="url" type="url" placeholder="Please use with this format https://scam-website.com" required/>
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="explanation">Explain what kind of scam they are involved in</Label>
