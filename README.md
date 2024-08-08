@@ -7,7 +7,7 @@ Created by
 ![image](https://github.com/user-attachments/assets/679ef9bc-0f36-4ab5-b941-fd8050bef6ed)
 Website: https://scammerlocker.vercel.app/
 
-Here's how it works:- 
+Here's how it works:- <br>
 The tool does a WHOIS lookup to get the domain registrar's abuse contact email. Then it uses Groq's llama3-70b-8192 model to use the context and target URL provided by the user to generate an abuse report email with a matching subject. Using Mailgun, it emails the domain provider at their designated abuse contact.
 
 The tool works for any illegal websites, including but not limited to investment scams, crypto pump, and dump, phishing pages, animal abuse, etc. All domain registrars, hosting providers, and TLDs are legally required to take action when they receive an abuse report. Typically, it takes several days to a few weeks to take the website down.
