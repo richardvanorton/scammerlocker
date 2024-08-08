@@ -16,6 +16,8 @@ export async function reportWebsite(captchaToken: any, formData: FormData) {
 
     // @ts-ignore
     siteUrl = siteUrl.replace(/^https?:\/\//, '')
+    // @ts-ignore
+    siteUrl = siteUrl.replace(/^www\./,'')
 
     const whois = require('whois-json');
 
