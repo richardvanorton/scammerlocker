@@ -30,7 +30,7 @@ FROM_SENDER=''
 FROM_DOMAIN=''
 PROXY_PASS=''
 ```
-[step 3 no longer required]
+[step 3 no longer required] <br>
 3. Remember to set the proxy port, username and host IP in app/actions.ts
 ```bash
 Proxy services:
