@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast"
 import React, { useRef, useState } from 'react';
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import type { Metadata } from 'next'
 
 
 
