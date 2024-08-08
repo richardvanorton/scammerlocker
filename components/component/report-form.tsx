@@ -56,7 +56,7 @@ export function ReportForm() {
             <CardContent className="space-y-4">
               <div className="grid gap-2">
                 <Label htmlFor="url">Target URL</Label>
-                <Input id="url" name="url" type="url" placeholder="Enter the URL of the website" required/>
+                <Input id="url" name="url" type="url" placeholder="https://scam-website.com" required/>
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="explanation">Explain what kind of scam they are involved in</Label>
