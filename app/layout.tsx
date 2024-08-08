@@ -17,10 +17,7 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: 'https://raw.githubusercontent.com/gitdagray/my-blogposts/main/images/og-card.png',
-
-                width: 1200,
-                height: 630,
+                url: '/opengraph-image.png',
                 alt: 'Preview image for Scammerlocker',
             }
         ]
