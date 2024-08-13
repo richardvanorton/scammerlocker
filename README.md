@@ -1,4 +1,4 @@
-This is an opensource tool to (legally) take down scam domains. It automates the boring abuse report process for you. Licensed under GNU GPLv3.
+This is an opensource tool to (legally) take down scam domains. It automates the boring abuse report process. Licensed under GNU GPLv3.
 
 Created by 
 [@richardvanorton](https://www.github.com/richardvanorton) and
