@@ -1,4 +1,6 @@
-This is an opensource tool to (legally) take down scam domains created by Van Orton Recovery (https://vanortonrecovery.com) for public benefit. **Please DO NOT USE this tool if you intend to use our asset recovery services**. It automates the boring abuse report process. Licensed under GNU GPLv3.
+**DISCLAIMER**: **Please DO NOT USE this tool if you intend to use our asset recovery services**
+
+This is an opensource tool to (legally) take down scam domains created by Van Orton Recovery (https://vanortonrecovery.com) for public benefit. It automates the boring abuse report process. Licensed under GNU GPLv3.
 
 Created by 
 [@richardvanorton](https://www.github.com/richardvanorton) and
