@@ -1,8 +1,8 @@
-This is an opensource tool to (legally) take down scam domains. It automates the boring abuse report process. Licensed under GNU GPLv3.
+This is an opensource tool to (legally) take down scam domains created by Van Orton Recovery (https://vanortonrecovery.com) for public benefit. Please DO NOT USE this tool if you intend to use our asset recovery services. It automates the boring abuse report process. Licensed under GNU GPLv3.
 
 Created by 
 [@richardvanorton](https://www.github.com/richardvanorton) and
-[@oliviavanorton](https://www.github.com/oliviavanorton)
+[@oliviavanorton](https://www.github.com/oliviavanorton) for Van Orton Recovery, operating as Tachyon Labs, LLC, in Newark, Delaware.
 
 ![image](https://github.com/user-attachments/assets/679ef9bc-0f36-4ab5-b941-fd8050bef6ed)
 Website: https://scammerlocker.vercel.app/
